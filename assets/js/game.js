@@ -2,7 +2,7 @@
 
 // function to generate a random numeric value
 var randomNumber = function(min, max) {
-  var value = Math.floor(Math.random() * (max - min + 1) + min);
+  var value = Math.floor(Math.random() * (max - min) + min);
 
   return value;
 };
@@ -160,11 +160,8 @@ var endGame = function() {
   window.alert("The game has now ended. Let's see how you did!");
   var highScore = localStorage.getItem("highscore");
   if (highScore === null) {
-    highScore = 0; debugger;
-  } else {
-    console.log(highScore = localStorage.getItem("highscore"));
+    highScore = 0;
   }
-
   // if player has more money than the high score, player has new highscore!
   if (playerInfo.money > highScore) {
     localStorage.setItem("highscore", playerInfo.money);
